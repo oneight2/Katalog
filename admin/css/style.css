@@ -1,0 +1,245 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+body{
+    font-family: 'Roboto',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: linear-gradient(to right, salmon, #a766e4);
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 60%;
+    margin: 12% auto;
+}
+.kiri h1{
+    font-family: 'pacifico';
+    font-size: 40px;
+    padding: 0 20px;
+    padding-top: 40px;
+    color: white;
+}
+.kiri h2{
+    font-family: 'ubuntu';
+    padding: 0 20px;
+    color: white;
+
+}
+.kanan h1{
+    margin-bottom: 20px;
+}
+.kanan{
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+    box-shadow: 2px 2px 10px gray;
+}
+#pesan{
+    font-family:'roboto';
+    padding: 4px 4px;
+    margin: 40px auto;
+    text-align: center;
+    background-color:rgb(255, 83, 83);
+    color:white;
+    font-size:12pt;
+    width:50%;
+    display: inherit;
+}
+.kanan input{
+    padding: 10px;
+    width: 60%;
+    margin-bottom: 20px;
+    background-color: #d3d3d3;
+    border-style: none;
+    border-radius: 5px;
+}
+input{
+    padding: 10px;
+    width: 60%;
+    margin-bottom: 20px;
+    background-color: #d3d3d3;
+    border-style: none;
+    border-radius: 5px;
+}
+.kanan form{
+    background-color: white;
+    margin: 30px ;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+.kanan button{
+    width: 20%;
+    padding: 10px 0;
+    border-radius: 10px;
+    border-color: #0066ff;
+    background-color: white;
+    color: #0066ff;
+}
+button:hover{
+    background-color: #0066ff;
+    color: white;
+
+}
+#header{
+    width: 100%;
+    background-color: #3c3d8f;
+    position: sticky;
+    top : 0;
+    box-shadow: 1px 1px 20px #121462;
+    z-index: 9;
+}
+#header h2{
+    padding: 10px 30px;
+    color: white;
+text-align: right;
+    
+}
+
+#menu-profile{
+    float: left;
+    background-color:  #4041a1;
+    width: 250px;
+    position: fixed;
+}
+#menu-profile p{
+    padding: 20px 40px;
+}
+#menu-profile #utama{
+    margin-bottom: 30px;
+    margin-top: 30px;
+    background-color: #3c3d8f;
+}
+#menu-profile ul{
+    list-style: none;
+    margin: 0;
+    padding:0;
+
+}
+#menu-profile ul a{
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding: 10px 40px;
+
+}
+#menu-profile ul a:hover,
+#menu-profile ul a.active{
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding: 10px 20px;
+    background-color: orange;
+}
+#menu-profile #space{
+    padding-bottom:285px; 
+}
+#profile-content{
+    float: left;
+    background-color: white;
+    padding: 10px;
+    width: 930px;
+}
+.table-list{
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    background-color: white;
+    margin-left: 260px;
+    border-radius: 5px;
+
+}
+.baris-title{
+    background: #dbdbdb;
+    color: #121462;
+}
+.table-list tr th, .table-list tr td{
+    padding: 10px 7px;
+}
+.kolom-nomor{
+    width: 20px;
+    text-align: center;
+}
+.kiri{
+    text-align: left;
+}
+.tengah{
+    text-align: center;
+}
+
+.btn{
+    padding: 5px 15px;
+    text-decoration: none;
+    background-color: darkslateblue;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+.btn:hover{
+    background-color: orange;
+}
+.btn-action{
+    float: left;
+}
+
+.btn-tambah{
+    margin: 10px 270px;
+
+}
+form{
+    background-color: white;
+    margin: 30px ;
+    margin-left: 280px;
+    border-radius: 5px;
+}
+.luhur{
+    padding-top: 50px;
+}
+.element-form{
+    padding-left: 50px;
+    padding-top: 10x; 
+}
+
+.element-form span {
+    display: block;
+    font-weight: normal;
+    width: 80%;
+}
+input[type="radio"]{
+    float: left;
+    width: 2%;
+    margin-top: 5px;
+}
+.update{
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+.element-form span select {
+    width: 30%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+}
+.grid .left,
+.grid .right{
+    padding: 20px;
+}
+.form-foto button{
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+
+
+
+
+ 
