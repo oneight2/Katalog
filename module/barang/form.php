@@ -24,13 +24,12 @@ if($id_barang){
 
 ?>
 
-<script src="<?php echo BASE_URL."js/ckeditor/ckeditor.js"; ?>"></script>
 
-<form action="<?= BASE_URL."module/barang/action.php?id_barang=$id_barang"; ?>" method="post">
-<div class="element-form luhur">
+
+<form action="<?php echo BASE_URL."module/barang/action.php?id_barang=$id_barang"; ?>" method="post">
 	<span>
 		<label>Kategori</label><br>
-		<select name="nama_kategori">
+		<select name="id_kategori">
 			<?php $query = mysqli_query($koneksi, "SELECT id_kategori, kategori FROM kategori WHERE status='on' ORDER BY kategori ASC"); ?>
 			<?php while($row = mysqli_fetch_assoc($query)): ?>
 				<?php if($id_kategori == $row["id_kategori"]) : ?>
@@ -41,47 +40,28 @@ if($id_barang){
 			<?php endwhile; ?>			
 		</select>
 	</span><br>
-</div>
-	<div class="element-form">
+
 	<span>
 		<label>Nama Barang</label><br>
-		<input type="text" name="nama_barang" value="<?= $nama_barang ?>" autocomplete="off">
+		<input type="text" name="nama_barang" value="<?= $nama_barang ?>">
 	</span><br>
-</div>
-<div class="element-form">
+
 	<span>
 		<label>Harga</label><br>
 		<input type="text" name="harga" value="<?= $harga ?>">
 	</span><br>
-</div>
-
-	<div class="element-form">
 
 	<span>
 		<label>Stok</label><br>
 		<input type="text" name="stok" value="<?= $stok ?>">
 	</span><br>
-</div>
-	
-	<div class="element-form">
-		<span>
+
+	<span><br>
 		<label>Deskripsi</label><br>
-		<textarea name="deskripsi" id="editor"><?= $deskripsi ?></textarea>
+		<textarea name="deskripsi"><?= $deskripsi ?></textarea>
 	</span>
-<br> </div>
+<br>
 	<span>
-		<button class='btn update'type="submit" name="button" value="<?= $button ?>"><?= $button ?></button>
+		<button type="submit" name="button" value="<?= $button ?>"><?= $button ?></button>
 	</span>
 </form>
-<script>
-	ClassicEditor
-		.create( document.querySelector( '#editor' ), {
-			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
-		} )
-		.then( editor => {
-			window.editor = editor;
-		} )
-		.catch( err => {
-			console.error( err.stack );
-		} );
-</script>

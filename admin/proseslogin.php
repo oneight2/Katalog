@@ -15,7 +15,7 @@ if(mysqli_num_rows($query) == 0){
 	session_start();
 	$_SESSION["login"] = true;
 
-	header("location: ".BASE_URL."myprofile.php");
+	header("location: ".BASE_URL."myprofile.php?module=barang&page=list");
 };
 
 ?>

@@ -47,7 +47,7 @@ if($login){
 					<a <?php if($module == "slide"){echo "class='active'";}?> href="<?= BASE_URL."myprofile.php?module=slide&page=list";?>">Slider</a>
 				</li>
 				<P id="space"> </P>
-				<li>
+				<li id="logout">
 					<a href="<?= BASE_URL."logout.php"?>">Logout</a>
 				</li>
 			</ul>

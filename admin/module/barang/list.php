@@ -2,6 +2,7 @@
 	<a href="<?php echo BASE_URL."myprofile.php?module=barang&page=form"; ?>" class="btn btn-action btn-tambah" >+Tambah</a>
 </div>
 
+
 <?php $queryBarang = mysqli_query($koneksi, "SELECT barang.*, kategori.kategori FROM barang JOIN kategori ON barang.id_kategori=kategori.id_kategori"); ?>
 
 <?php if( mysqli_num_rows($queryBarang) == 0 ) : ?>
@@ -31,6 +32,7 @@
 				<td class="tengah"><?= $row["deskripsi"]; ?></td>
 				<td class="tengah">
 					<a href="<?= BASE_URL."myprofile.php?module=barang&page=form&id_barang=$row[id_barang]"; ?>" class="btn " >Ubah</a>
+					<a href="<?= BASE_URL."module/barang/action.php?button=delete&id_barang=$row[id_barang]"; ?>" class="btn" >Hapus</a>
 				</td>
 			</tr>
 			<?php $no++; ?>
