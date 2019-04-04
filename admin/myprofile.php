@@ -9,7 +9,7 @@ if($login){
 	$module = isset($_GET["module"]) ? $_GET["module"] : false;
 	$page = isset($_GET["page"]) ? $_GET["page"] : false;
 }else{
-	header("Location: ".BASE_URL."index.php");
+	header("Location: ".BASE_URL);
 }
 
 ?>
