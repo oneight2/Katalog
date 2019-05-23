@@ -23,6 +23,6 @@ if($button == "Tambah"){
 	$id_barang = $_GET["id_barang"];
 	mysqli_query($koneksi,"DELETE FROM barang WHERE id_barang='$id_barang'");
 }
-header("Location:".BASE_URL."myprofile.php?module=barang&page=list");
+// header("Location:".BASE_URL."myprofile.php?module=barang&page=list");
 
 ?>

@@ -4,7 +4,7 @@
 
 <?php if( mysqli_num_rows($queryFoto) == 0 ) : ?>
 <div  id="pesan">
-	<h4>Data belum ada</h4>
+	<h6>Data belum ada</h6>
 </div>
 <?php else: ?>
 	<table class="table-list">

@@ -13,7 +13,7 @@
 	<title>login</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id="bg-login">
 
 <div class="container">
 <div class="kiri">
