@@ -42,7 +42,10 @@
 			<?php $no++; ?>
 		<?php endwhile; ?>	
 	</table>
-<?php endif; ?>	
+<?php endif; ?>
+<div id="tambah">
+	<a href="<?php echo BASE_URL."myprofile.php?module=barang&page=form"; ?>" class="btn btn-action btn-tambah">+Tambah</a>
+</div>	
 </div>
 </div>
 </div>
