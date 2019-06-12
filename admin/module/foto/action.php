@@ -3,7 +3,7 @@ include_once("../../function/helper.php");
 include_once("../../function/koneksi.php");
 
 $button = $_POST["button"];
-$id_barang = $_POST["nama_jaket"];
+$kode_barang = $_POST["kode_barang"];
 $update_foto1 = "";
 $update_foto2 = "";
 $update_foto3 = "";
@@ -33,15 +33,13 @@ if( !empty($_FILES["foto1"]["name"]) || !empty($_FILES["foto2"]["name"]) || !emp
 }
 
 if($button == "Tambah"){
-	mysqli_query($koneksi, "INSERT INTO foto VALUES ('', '$foto1','$foto2','$foto3','$foto4','$id_barang')");
+	mysqli_query($koneksi, "INSERT INTO foto VALUES ('$kode_barang', '$foto1', '$foto2', '$foto3', '$foto4')");
 }else if($button == "Ubah"){
-	$id_foto = $_GET["id_foto"];
-
 	mysqli_query($koneksi, "UPDATE foto SET 
 							$update_foto1,
 							$update_foto2,
 							$update_foto3,
-							$update_foto4 WHERE id_foto='$id_foto'");
+							$update_foto4 WHERE kode_barang='$kode_barang'");
 }
 header("Location: ".BASE_URL."myprofile.php?module=foto&page=list");
 

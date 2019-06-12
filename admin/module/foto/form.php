@@ -1,19 +1,22 @@
 <?php
-$id_foto = isset($_GET["id_foto"]) ? $_GET["id_foto"] : false;
+$kode_barang = isset($_GET["kode_barang"]) ? $_GET["kode_barang"] : false;
+$action = isset($_GET["action"]) ? $_GET["action"] : false;
+
 $foto1 = "";
 $foto2 = "";
 $foto3 = "";
 $foto4 = "";
-$id_barang = "";
 $button = "Tambah";
-if($id_foto){
-	$queryFoto = mysqli_query($koneksi, "SELECT * FROM foto WHERE id_foto='$id_foto'");
+
+if($action == "edit"){
+	$queryFoto = mysqli_query($koneksi, "SELECT * FROM foto WHERE kode_barang='$kode_barang'");
 	$row = mysqli_fetch_assoc($queryFoto);
+
 	$foto1 = $row["foto1"];
 	$foto2 = $row["foto2"];
 	$foto3 = $row["foto3"];
 	$foto4 = $row["foto4"];
-	$id_barang = $row["id_barang"];
+
 	$foto1 = "<img src='".BASE_URL."img/foto/$foto1' style='width : 50px;'>";
 	$foto2 = "<img src='".BASE_URL."img/foto/$foto2' style='width : 50px;'>";
 	$foto3 = "<img src='".BASE_URL."img/foto/$foto3' style='width : 50px;'>";
@@ -21,22 +24,15 @@ if($id_foto){
 	$button = "Ubah";
 }
 ?>
-<form action="<?= BASE_URL."module/foto/action.php?id_foto=$id_foto"; ?>" method="post" enctype="multipart/form-data">
+<form action="<?= BASE_URL."module/foto/action.php?kode_barang=$kode_barang"; ?>" method="post" enctype="multipart/form-data">
 	<div class="grid">
 		<div class="left">
-			<span>
-				<label>Nama Jaket</label>
-				<select name="nama_jaket">
-					<?php $queryBarang = mysqli_query($koneksi, "SELECT id_barang, nama_barang FROM barang ORDER BY nama_barang ASC"); ?>
-					<?php while($row = mysqli_fetch_assoc($queryBarang)): ?>
-					<?php if($id_barang == $row["id_barang"]) : ?>
-					<option value="<?= $row['id_barang']; ?>" selected="true"><?= $row["nama_barang"]; ?></option>
-					<?php else : ?>
-					<option value="<?= $row['id_barang']; ?>"><?= $row["nama_barang"]; ?></option>
-					<?php endif; ?>
-					<?php endwhile; ?>
-				</select>
-			</span>
+			<div class="element-form">
+				<span>
+					<label>Kode Barang</label>
+					<input type="text" name="kode_barang" value="<?= $kode_barang ?>">
+				</span>
+			</div>
 			<br>
 			<span>
 				<label>Foto 1</label><br>

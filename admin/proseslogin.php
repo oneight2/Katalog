@@ -6,16 +6,13 @@ include_once("function/koneksi.php");
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-$query = mysqli_query($koneksi, "SELECT * FROM admin WHERE username='$username' AND password='$password'");
-
-if(mysqli_num_rows($query) == 0){
-	header("Location: ".BASE_URL."index.php?notif=true");
-}else{
-	
+if($username == "admin" && $password == "123"){
 	session_start();
 	$_SESSION["login"] = true;
 
 	header("location: ".BASE_URL."myprofile.php?module=barang&page=list");
-};
+}else{
+	header("Location: ".BASE_URL."index.php?notif=true");
+}
 
 ?>

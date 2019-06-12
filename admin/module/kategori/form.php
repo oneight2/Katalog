@@ -21,7 +21,7 @@ $button = "Ubah";
         <div class="form-group row">
           <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
           <div class="col-sm-10">
-            <input type="text" name="kategori" class="form-control" id="kategori" placeholder="Jenis Jaket">
+            <input type="text" name="kategori" class="form-control" id="kategori" placeholder="Jenis Jaket" value="<?= $kategori ?>">
           </div>
         </div>
         <fieldset class="form-group">

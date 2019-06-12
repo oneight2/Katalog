@@ -1,16 +1,18 @@
 <?php
-$id_barang = isset($_GET["id_barang"]) ? $_GET["id_barang"] : false;
+$kode_barang = isset($_GET["kode_barang"]) ? $_GET["kode_barang"] : false;
 $id_kategori = "";
 $nama_barang = "";
+$ukuran = "";
 $harga = "";
 $stok = "";
 $deskripsi = "";
 $button = "Tambah";
-if($id_barang){
-	$queryBarang = mysqli_query($koneksi, "SELECT * FROM barang WHERE id_barang='$id_barang'");
+if($kode_barang){
+	$queryBarang = mysqli_query($koneksi, "SELECT * FROM barang WHERE kode_barang='$kode_barang'");
 	$row = mysqli_fetch_assoc($queryBarang);
 	$id_kategori = $row["id_kategori"];
 	$nama_barang = $row["nama_barang"];
+	$ukuran = $row["ukuran"];
 	$harga = $row["harga"];
 	$stok = $row["stok"];
 	$deskripsi = $row["deskripsi"];
@@ -24,7 +26,7 @@ if($id_barang){
 			<h6 class="m-0 font-weight-bold text-primary">Tambah Barang</h6>
 		</div>
 		<div class="card-body">
-			<form action="<?= BASE_URL."module/barang/action.php?id_barang=$id_barang"; ?>" method="post">
+			<form action="<?= BASE_URL."module/barang/action.php?kode_barang=$kode_barang"; ?>" method="post">
 				
 				<div class="grid">
 					<div class="left">
@@ -45,23 +47,40 @@ if($id_barang){
 						</div>
 						<div class="element-form">
 							<span>
+								<label>Kode Barang</label><br>
+								<input type="text" name="kode_barang" value="<?= $kode_barang ?>" autocomplete="off">
+							</span><br>
+						</div>
+						<div class="element-form">
+							<span>
 								<label>Nama Barang</label><br>
 								<input type="text" name="nama_barang" value="<?= $nama_barang ?>" autocomplete="off">
 							</span><br>
 						</div>
+
+						<div class="element-form">
+							<span>
+								<label>Ukuran</label><br>
+								<input type="checkbox" name="ukuran[]" value="S">S<br>
+								<input type="checkbox" name="ukuran[]" value="M">M<br>
+								<input type="checkbox" name="ukuran[]" value="L">L<br>
+								<input type="checkbox" name="ukuran[]" value="XL">XL<br>
+							</span><br>
+						</div>
+						
 					</div>
 					<div class="right">
 						
 						<div class="element-form">
 							<span>
 								<label>Harga</label><br>
-								<input type="text" name="harga" value="<?= $harga ?>">
+								<input type="number" name="harga" value="<?= $harga ?>">
 							</span><br>
 						</div>
 						<div class="element-form">
 							<span>
 								<label>Stok</label><br>
-								<input type="text" name="stok" value="<?= $stok ?>">
+								<input type="number" name="stok" value="<?= $stok ?>">
 							</span><br>
 						</div>
 					</div>
