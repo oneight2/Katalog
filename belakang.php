@@ -19,5 +19,6 @@
 				<li><p><?= $rowBarang ?></p></li>
 			<?php } ?>
 		<?php } ?>
+			<li><a href="https://www.bukalapak.com/">Toko Buka Lapak</a></li>
 	</ul>
 </div>

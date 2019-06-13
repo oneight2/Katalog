@@ -5,15 +5,11 @@
 ?>
 	<?php if($page == "belakang") { ?>
 		<ul>
-			<li><a href="">Home</a></li>
-			<li><a href="">contact</a></li>
-			<li><a href="">DLL</a></li>
+			<li><a href="<?= BASE_URL."index.php" ?>">Home</a></li>
 		</ul>
 	<?php }else{ ?>
 		<ul>
-			<li>Home</li>
-			<li>contact</li>
-			<li>DLL</li>
+			<li><a href="<?= BASE_URL."index.php" ?>">Home</a></li>
 		</ul>
 	<?php 
 		foreach ($queryKategori as $rowKategori) { ?>

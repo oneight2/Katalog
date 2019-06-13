@@ -32,6 +32,9 @@
 		?>
 	</div>
 	<div>
+		<?php include_once "module/informasiToko.php" ?>
+	</div>
+	<div>
 		footer
 	</div>
 </body>
