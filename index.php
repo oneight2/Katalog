@@ -2,9 +2,11 @@
 	
 	include_once "function/helper.php";
 	include_once "function/koneksi.php";
-	include_once "module/kategori.php";
 
 	$id_kategori = isset($_GET["id_kategori"]) ? $_GET["id_kategori"] : false;
+	$page = isset($_GET["page"]) ? $_GET["page"] : false;
+
+	$file="$page.php";
 
 ?>
 
@@ -18,15 +20,16 @@
 		gambar
 	</div>
 	<div>
-		<?php 
-			foreach ($queryKategori as $rowKategori) { ?>
-				<ul>
-					<li><a href="<?php echo BASE_URL."index.php?id_kategori=$rowKategori[id_kategori]" ?>"><?= $rowKategori["kategori"] ?></a></li>
-				</ul>
-		<?php } ?>
+		<?php include_once "module/bar.php"; ?>
 	</div>
 	<div>
-		<?php include_once "depan.php"; ?>
+		<?php 
+			if(file_exists($file)){
+				include_once "$file";
+			}else{
+				include_once "depan.php";
+			}
+		?>
 	</div>
 	<div>
 		footer
