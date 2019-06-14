@@ -10,13 +10,13 @@
 
 <div>
  	<ul>
- 		<?php foreach($barang as $rowBarang) { ?>
+ 		<?php foreach($barang as $rowBarang) : ?>
  			<li>
  				<p><?= $rowBarang["harga"] ?></p>
  				<a href=""><img src="<?php echo BASE_URL."admin/img/foto/$rowBarang[foto1]"?>"></a>
  				<p><a href=""><?= $rowBarang["nama_barang"] ?></a></p>
  				<span>Stok : <?= $rowBarang["stok"] ?></span>
  			</li>
- 		<?php } ?>
+ 		<?php endforeach ?>
  	</ul>
 </div>
