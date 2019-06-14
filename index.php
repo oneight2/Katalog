@@ -4,6 +4,16 @@
 	include_once "function/helper.php";
 	include_once "function/koneksi.php";
 
+	include_once "module/kategori.php";
+	$id_kategori = isset($_GET["id_kategori"]) ? $_GET["id_kategori"] : false;
+
+
+	$id_kategori = isset($_GET["id_kategori"]) ? $_GET["id_kategori"] : false;
+	$page = isset($_GET["page"]) ? $_GET["page"] : false;
+
+	$file="$page.php";
+
+
 ?>
 <!DOCTYPE html>
 <html>
