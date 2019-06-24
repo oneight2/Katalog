@@ -33,7 +33,7 @@ if($kode_barang){
 						<div class="element-form">
 							<span>
 								<label>Kategori</label><br>
-								<select name="nama_kategori">
+								<select name="nama_kategori" class="form-control">
 									<?php $query = mysqli_query($koneksi, "SELECT id_kategori, kategori FROM kategori WHERE status='on' ORDER BY kategori ASC"); ?>
 									<?php while($row = mysqli_fetch_assoc($query)): ?>
 									<?php if($id_kategori == $row["id_kategori"]) : ?>
@@ -57,16 +57,7 @@ if($kode_barang){
 								<input type="text" name="nama_barang" value="<?= $nama_barang ?>" autocomplete="off">
 							</span><br>
 						</div>
-
-						<div class="element-form">
-							<span>
-								<label>Ukuran</label><br>
-								<input type="checkbox" name="ukuran[]" value="S">S<br>
-								<input type="checkbox" name="ukuran[]" value="M">M<br>
-								<input type="checkbox" name="ukuran[]" value="L">L<br>
-								<input type="checkbox" name="ukuran[]" value="XL">XL<br>
-							</span><br>
-						</div>
+						
 						
 					</div>
 					<div class="right">
@@ -83,8 +74,20 @@ if($kode_barang){
 								<input type="number" name="stok" value="<?= $stok ?>">
 							</span><br>
 						</div>
+						<div class="element-form">
+							<label>Ukuran</label><br>
+							<input type="checkbox" name="ukuran[]" value="S">S
+							
+							<input type="checkbox" name="ukuran[]" value="M">M
+							
+							<input type="checkbox" name="ukuran[]" value="L">L
+							
+							<input type="checkbox" name="ukuran[]" value="XL">XL
+							
+							
+						</div>
 					</div>
-				</div>	
+				</div>
 				<div class="element-form">
 					<span>
 						<label>Deskripsi</label><br>

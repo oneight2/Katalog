@@ -3,7 +3,7 @@
 $queryBarang = mysqli_query($koneksi, "SELECT kode_barang, nama_barang FROM barang");
 
 foreach($queryBarang as $row){
-	var_dump($row["kode_barang"]);
+	
 	$queryFoto = mysqli_query($koneksi, "SELECT * FROM foto WHERE kode_barang='$row[kode_barang]'");
 }
 $fotoJbarang = mysqli_query($koneksi, "SELECT foto.*, barang.nama_barang FROM foto JOIN barang ON foto.kode_barang=barang.kode_barang");

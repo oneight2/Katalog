@@ -15,7 +15,8 @@
 				<a href="<?php echo BASE_URL."myprofile.php?module=barang&page=form"; ?>"  >+Tambah</a>
 			</div>
 		<div class="table-responsive">
-	<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+	<table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+		<thead class="thead-default">
 			<th>No</th>
 			<th>Kode Jaket</th>
 			<th>Nama Jaket</th>
@@ -24,7 +25,7 @@
 			<th>kategori</th>
 			<th>Deskripsi</th>
 			<th>Action</th>
-		</tr>
+		</thead>
 
 		<?php $no = 1; ?>
 		<?php while( $row = mysqli_fetch_assoc($queryBarang) ) : ?>
@@ -35,7 +36,7 @@
 				<td><?= $row["harga"]; ?></td>
 				<td><?= $row["stok"]; ?></td>
 				<td><?= $row["kategori"]; ?></td>
-				<td><?= $row["deskripsi"]; ?></td>
+				<td style="max-width: 390px;"><?= $row["deskripsi"]; ?></td>
 				<td>
 					<a href="<?= BASE_URL."myprofile.php?module=barang&page=form&kode_barang=$row[kode_barang]"; ?>" class="btn btn-warning btn-sm" >Ubah</a>
 					<a href="<?= BASE_URL."module/barang/action.php?button=delete&kode_barang=$row[kode_barang]"; ?>" class="btn btn-danger btn-sm" >Hapus</a>
